@@ -15,23 +15,27 @@
 ## Bảng dùng AI trong reflection
 
 | Phase | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai/hời hợt ở đâu? | Tôi sửa gì |
-|---|---|---|---|---|
-| Scan | Gợi ý thêm problems theo role PM | Giúp nhớ thêm Slack Search, PRD Review | Gợi ý vài ý quá rộng | Bỏ các ý không có workflow thật |
-| Workflow | Nhờ AI chuyển mô tả thành Mermaid | Nhanh hơn khi vẽ flow | AI gộp bước viết narrative và review | Tách lại vì bottleneck nằm ở narrative |
-| Research | Tìm tool tương tự | Gợi ý Jira, Slack AI, Gemini, Fellow | Có claim tiết kiệm thời gian không nguồn | Chỉ giữ link tool chính thức, không dùng số liệu không verify |
-| Problem Statement | Nhờ AI phản biện field mơ hồ | Chỉ ra metric quality yếu | AI đề xuất agent quá sớm | Nhóm hạ về Workflow |
+| ---- | ---- | ---- | ---- | ---- |
+| Scan | Gợi ý thêm problems theo các lăng kính lặp lại, tốn thời gian, AI có thể làm tốt hơn và pain từ người khác | Giúp tôi mở rộng danh sách lên 10 problems về phân công, theo dõi tiến độ, xử lý feedback và tổng hợp bài | Một số problem quá rộng hoặc giống ý tưởng giải pháp hơn là vấn đề thực tế | Bỏ các ý không có actor, workflow hoặc dấu hiệu thật rõ ràng |
+| Problem Card | Nhờ AI chuyển top 3 problems thành Problem Card theo template | Giúp trình bày đầy đủ actor, bối cảnh, workflow, bottleneck, impact và success metric | AI tự ước lượng một số thời gian và tỉ lệ khi chưa có dữ liệu thật | Ghi rõ số liệu nào chỉ là ước lượng và chỉnh lại workflow theo trải nghiệm thực tế |
+| Validation | Nhờ AI gợi ý câu hỏi khảo sát người làm marketing freelance | Giúp câu hỏi tập trung vào cách dùng ChatGPT, chất lượng output và lỗi tính ngân sách | Một số câu hỏi ban đầu mang tính dẫn dắt, dễ khiến người trả lời nghiêng về việc cần AI  | Viết lại câu hỏi trung lập và ghi nhận cả ý kiến rằng Google Sheets template có thể đã đủ |
+| Research | Nhờ AI gợi ý các tool và phương án tương tự BrandFlow | Giúp xác định các nhóm giải pháp như LLM trực tiếp, template, dashboard và workflow automation | Một số nhận xét về tool còn chung chung hoặc có claim không kèm nguồn kiểm chứng | Chỉ giữ thông tin có thể kiểm tra và không sử dụng số liệu chưa được verify |
 
 ## Bài học:
 
-- Problem tốt không phải problem nghe "AI" nhất, mà là problem có workflow và metric rõ.
-- Vẽ workflow giúp thấy phần nào rule đủ, phần nào AI mới có ích.
-- Agent không phải đích đến mặc định. Trong case này, Workflow hợp lý hơn vì có đường đi cố định và có PM review.
-- Research không phải để copy tool, mà để thấy pattern: nhiều sản phẩm tốt đều để AI draft, người thật review.
+* Problem tốt không phải là problem nghe “AI” nhất, mà là problem có actor, workflow, bottleneck và success metric rõ ràng.
+* Vẽ workflow giúp tôi nhận ra không phải bước nào cũng cần AI: RAG phù hợp để lấy context doanh nghiệp, Python phù hợp để kiểm soát ngân sách, còn AI hữu ích ở bước tạo và phản biện draft plan.
+* Agent không phải đích đến mặc định. Trong trường hợp BrandFlow, Workflow hợp lý hơn vì quy trình có đường đi cố định, mỗi bước có input/output rõ và chủ doanh nghiệp vẫn review trước khi sử dụng plan.
+* Validation giúp nhóm nhận ra pain không chỉ nằm ở chi phí thuê agency, mà còn ở việc SME thiếu kiến thức marketing và các LLM hiện tại thường cho output chung chung hoặc tính ngân sách chưa chính xác.
+* Research không phải để sao chép sản phẩm có sẵn, mà để nhận ra các pattern phù hợp: lưu context doanh nghiệp, dùng AI tạo bản nháp, dùng rule cho phép tính chính xác và để người thật kiểm tra quyết định cuối.
+* Non-AI alternative vẫn rất quan trọng. Template và dashboard có thể đã đủ với một số doanh nghiệp nhỏ, vì vậy nhóm không nên mặc định mọi trường hợp đều cần AI.
+* AI có thể hỗ trợ cấu trúc, gợi ý và phản biện, nhưng evidence thực tế và quyết định cuối vẫn cần dựa trên khảo sát và đánh giá của nhóm.
 
 Nếu làm lại:
 
 ```text
-Tôi sẽ validate với nhiều PM hơn trước khi chốt metric 90 phút → 30 phút, vì baseline hiện tại chủ yếu đến từ trải nghiệm của tôi.
+Tôi sẽ khảo sát thêm nhiều chủ doanh nghiệp SME và người làm marketing trước khi chốt các metric về thời gian, chi phí và chất lượng plan, vì baseline hiện tại mới dựa trên một nhóm người được hỏi khá nhỏ. Tôi cũng sẽ chuẩn bị câu hỏi trung lập hơn để so sánh rõ giữa việc dùng template, LLM trực tiếp, thuê agency và sử dụng BrandFlow.
 ```
+
 
 ---
